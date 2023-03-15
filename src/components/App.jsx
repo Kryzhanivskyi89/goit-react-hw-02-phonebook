@@ -6,8 +6,7 @@ import Filter from "./Filter/Filter";
 import ContactList from "./ContactList/ContactList";
 
 
-  class App extends React.Component {
-    
+  class App extends React.Component {    
     state = {
       contacts: [
       { id: nanoid(), name: 'Rosie Simpson', number: '459-12-56' },
@@ -18,7 +17,6 @@ import ContactList from "./ContactList/ContactList";
     filter: '',
     }
   
-
   addContact = event => {
     event.preventDefault();
 
@@ -44,7 +42,6 @@ import ContactList from "./ContactList/ContactList";
     form.reset();
   };
 
-
   deleteContact = (id) => {
     this.setState((prevState) => ({
       contacts: prevState.contacts.filter((contact) => contact.id !== id),
@@ -58,7 +55,6 @@ import ContactList from "./ContactList/ContactList";
   visibleContact = () => {
     const { filter, contacts } = this.state;
     const normalizeFilter = filter.toLowerCase();
-
     return contacts.filter(contact => contact.name.toLowerCase().includes(normalizeFilter));
   }
     
