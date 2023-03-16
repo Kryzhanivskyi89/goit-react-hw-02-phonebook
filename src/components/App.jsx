@@ -29,7 +29,7 @@ import ContactList from "./ContactList/ContactList";
       id: nanoid(),
     };
 
-    if (this.state.contacts.find(contact => contact.name === name.value)) {
+    if (this.state.contacts.find(contact => contact.name.toLowerCase() === name.value.toLowerCase())) {
       alert(        
         'The contact already exists with this name',        
       );
